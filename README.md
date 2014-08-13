@@ -33,3 +33,12 @@ class UserMailer < ActionMailer::Base
   end
 end
 ```
+
+#### Modify the app/views/user_email/signup_confirmation.text.erb file.
+
+```
+<%= @user.name %>
+
+Thank you for signing up.
+
+```
