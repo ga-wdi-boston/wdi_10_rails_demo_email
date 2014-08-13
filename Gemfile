@@ -26,15 +26,31 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+group :test do
+  gem 'faker'
+  gem 'chronic'
+end
 
-# Use unicorn as the app server
-# gem 'unicorn'
+group :development do
+  # Add model attributes
+  gem 'annotate'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+  gem 'pry-rails'
+  gem 'pry-nav'
+  gem 'pry-stack_explorer'
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+  # Turn off verbose logging of asset requests
+  gem 'quiet_assets'
 
+  # see Railscast for better_error gem
+  # http://railscasts.com/episodes/402-better-errors-railspanel
+  # FOR sublime text 3 MUST INSTALL sublime-url-protocol-mac, http://goo.gl/8KX1lb
+  # http://goo.gl/8KX1lb
+  gem 'better_errors'
+  gem 'binding_of_caller'
+
+  # Show a rails panel in Chrome. Requires a Chrome extension.
+  # https://github.com/dejan/rails_panel
+  gem 'meta_request'
+
+end
